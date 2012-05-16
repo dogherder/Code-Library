@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>This is an apply functionality example</title>
+</head>
+<body>
+		<div>
+		</div>
+		
+		<script type="text/javascript">
+			//Create a Dog object with a default name of Spot and with a method called bark that takes in a volume level and bark type
+			var Dog = {
+				name: "Spot",
+				bark: function(volume, barkType) {
+					return "The dog named "+this.name+" "+barkType+" at a volume of "+volume;
+				}
+			}
+			
+			//Assigns the results of running the bark method on the Dog object with the volume of 10 and a bark type of yipped
+			//Apply is similar to call except that instead of taking a list of arguments, it takes in an array of arguments
+			var dogBarkApply = Dog.bark.apply(Dog, [10, "yipped"]);
+			
+			//Here we can see the results by using an alert or console.log
+ 			alert(dogBarkApply);
+			console.log(dogBarkApply);
+		</script>
+</body>
+</html>
