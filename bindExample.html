@@ -18,12 +18,13 @@
 			}
 			
 			//Assigns the results of running the bark method on the Dog object with the volume of 10 and a bark type of yipped
-			//Apply is similar to call except that instead of taking a list of arguments, it takes in an array of arguments
-			var dogBarkApply = Dog.bark.apply(Dog, [10, "yipped"]);
+			//Bind is similar to call and apply except that it doesn't execute, it returns a function that can be run with arguments
+			//Here we leave out the barkType argument which we can pass in later
+			var dogBarkBind = Dog.bark.bind(Dog, 10);
 			
-			//Here we can see the results by using an alert or console.log
- 			alert(dogBarkApply);
-			console.log(dogBarkApply);
+			//Now we can run our new function, passing in a barkType variable
+ 			alert(dogBarkBind("yipped"));
+			console.log(dogBarkBind("yipped"));
 		</script>
 </body>
 </html>
